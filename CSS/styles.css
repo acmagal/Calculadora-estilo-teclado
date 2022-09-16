@@ -1,0 +1,106 @@
+* {
+    /*Zerando margin e padding*/
+    margin: 0;
+    padding: 0;
+    /*box sizing serve para todos os elementos do projeto não passem do limite da largura do elemento pai*/
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+
+body {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Em serve para deixar o codigo recursivo, pegando os valores de cada layout ao invés de um valor bruto inserido a mão*/
+    padding: 3em;
+
+}    
+
+
+#calc {
+    width: 400px;
+    padding: .5em;
+    background-color: #c4c4c4;
+    color: #000;
+    display: flex;
+    /*Como é um item emabixo do outro, temos que mudar o default de row para column*/
+    flex-direction: column;
+}
+
+#calc h3{
+    font-size: .8em;
+    font-weight: 300;
+    color: #666;
+
+}
+
+#operations{
+    text-align: right;
+
+
+}
+
+#current-operation, #previous-operation {
+    min-height: 1.6em;
+    overflow-wrap: break-word;
+}
+
+
+#previous-operation {
+    color: #777;
+    padding: .2em;
+    /*Servirá para quebrar a linha quando houver muitos numeros*/
+    
+    /*Quando não houver um numero, ja remos ter uma altura prevista para o numero */
+    
+}
+
+
+#current-operation {
+    font-size: 3em;
+    font-weight: 700;
+    padding: 0.2em;
+
+
+}
+
+#buttons-container {
+    display: grid;
+    /*Com esse grid template colors eu consigo definir a proporção de cada uma das colunas, onde cada fr é uma coluna*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3px;
+}
+
+#buttons-container button {
+    border: 1px solid transparent;
+    border-radius: 0;
+    height: 4em;
+    font-size: 1.2em;
+    background-color: #dbdbdb;
+    cursor: pointer;
+
+}
+
+#buttons-container .number {
+    background-color: #F3F3F3;
+}
+
+#buttons-container button:hover {
+    background-color: #bababa;
+    border-color: #999;
+}
+
+#buttons-container #equal-btn {
+    /*Usando o grid column span 2, ele vai poder ocupar 2 espaços na minha linha, ficando melhor que os outros*/
+    grid-column: span 2;
+    background-color: #7545eb;
+}
+
+#buttons-container #equal-btn:hover {
+    
+    background-color: #3a91b8;
+}
+
